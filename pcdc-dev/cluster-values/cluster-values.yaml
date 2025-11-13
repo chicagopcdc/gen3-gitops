@@ -1,5 +1,5 @@
-cluster: pcdc-dev
-project: pcdc
+cluster: pcdc-dev-1
+project: pcdc-dev-1
 
 accountNumber: "009732147623"
 
@@ -53,12 +53,39 @@ karpenter:
     enabled: true
 
 karpenter-crds:
+  amiSelectorName: "EKS-1-33-al23*"
   consolidationPolicy: "WhenEmptyOrUnderutilized"
   consolidateAfter: "5m"
   expireAfter: "72h"
   enabled: true
-  selectorTag: pcdc-dev
+  selectorTag: pcdc-dev-1
   migration: true
+  default:
+    enabled: true
+    consolidation: true
+    consolidateAfter: "30s"
+    consolidationPolicy: "WhenEmptyOrUnderutilized”
+    expireAfter: "168h"
+    volumeSize: 50Gi
+    additionalTags: {}
+    requirements:
+      - key: karpenter.sh/capacity-type
+        operator: In
+        values:
+          - on-demand
+          - spot
+      - key: kubernetes.io/arch
+        operator: In
+        values:
+          - amd64
+      - key: karpenter.k8s.aws/instance-family
+        operator: In
+        values:
+          - t3
+  jupyter:
+    enabled: false
+  workflow:
+    enabled: false
 
 vpc-cni:
   enabled: true
