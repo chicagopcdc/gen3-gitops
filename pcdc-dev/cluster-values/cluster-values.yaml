@@ -1,5 +1,5 @@
 cluster: pcdc-dev-1
-project: pcdc-dev-1
+project: pcdc-dev
 
 accountNumber: "009732147623"
 
@@ -48,7 +48,7 @@ grafana-alloy:
 
 karpenter:
   enabled: true
-  targetRevision: "1.0.8"
+  targetRevision: "1.6.5"
   configuration:
     enabled: true
 
