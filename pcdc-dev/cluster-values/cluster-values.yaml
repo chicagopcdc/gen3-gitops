@@ -64,7 +64,7 @@ karpenter-crds:
     enabled: true
     consolidation: true
     consolidateAfter: "30s"
-    consolidationPolicy: "WhenEmptyOrUnderutilized”
+    consolidationPolicy: "WhenEmptyOrUnderutilized"
     expireAfter: "168h"
     volumeSize: 50Gi
     additionalTags: {}
