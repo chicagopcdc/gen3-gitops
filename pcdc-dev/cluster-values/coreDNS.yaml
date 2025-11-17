@@ -1,2 +1,0 @@
-service:
-  clusterIP: "172.20.0.10"
