@@ -4,6 +4,7 @@ project: pcdc-dev-1
 accountNumber: "009732147623"
 
 configuration:
+  configurationRepo: https://github.com/chicagopcdc/gen3-gitops
   configurationRevision: master
 
 alb-controller:
