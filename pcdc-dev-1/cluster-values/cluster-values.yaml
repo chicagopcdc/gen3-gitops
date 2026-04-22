@@ -18,7 +18,7 @@ aws-s3-mountpoint:
     enabled: false
 
 calico:
-  enabled: true
+  enabled: false
   configuration:
     enabled: false
 
@@ -26,6 +26,9 @@ coreDNS:
   enabled: true
   configuration:
     enabled: true
+
+cilium:
+  enabled: true
 
 ebs-csi-driver:
   enabled: true
