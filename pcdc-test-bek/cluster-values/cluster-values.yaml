@@ -18,7 +18,7 @@ aws-s3-mountpoint:
     enabled: false
 
 calico:
-  enabled: false
+  enabled: true
   configuration:
     enabled: false
 
@@ -49,12 +49,12 @@ grafana-alloy:
 
 karpenter:
   enabled: true
-  targetRevision: "1.6.5"
+  targetRevision: "1.8.6"
   configuration:
     enabled: false
 
 cilium:
-  enabled: true
+  enabled: false
 
 karpenter-crds:
   amiSelectorName: "EKS-1-33-al23*"
