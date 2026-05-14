@@ -57,7 +57,7 @@ cilium:
   enabled: true
 
 karpenter-crds:
-  amiSelectorName: "EKS-1-33-al23*"
+  amiSelectorName: "EKS-1-35-x86-x64-AL23*"
   enabled: true
   selectorTag: pcdc-test-bek
   migration: true
@@ -86,7 +86,7 @@ karpenter-crds:
       - key: karpenter.k8s.aws/instance-memory
         operator: Gt
         values:
-          - "2500"
+          - "1500"
       - key: karpenter.k8s.aws/instance-memory
         operator: Lt
         values:
