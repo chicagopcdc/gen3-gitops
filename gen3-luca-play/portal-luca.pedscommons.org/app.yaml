@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gen3-gen3-luca-play
+  namespace: argocd
+spec:
+  project: default
+  sources:
+    - path: helm/gen3
+      repoURL: 'https://github.com/chicagopcdc/gen3-helm'
+      targetRevision: master
+      helm:
+        releaseName: gen3
+        valueFiles:
+          - $values/gen3-luca-play/portal-luca.pedscommons.org/values.yaml
+    - repoURL: 'https://github.com/chicagopcdc/gen3-gitops'
+      targetRevision: main
+      ref: values
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: default
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+    - Replace=true
+    automated:
+      selfHeal: true
