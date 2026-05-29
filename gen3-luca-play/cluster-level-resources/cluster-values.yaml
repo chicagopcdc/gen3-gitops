@@ -50,7 +50,7 @@ grafana-alloy:
 
 karpenter:
   enabled: true
-  targetRevision: "1.6.5"
+  targetRevision: "1.9.0"
 
 karpenter-crds:
   amiSelectorName: "amazon-eks-node-al2023-x86_64-standard-1.35-*"
