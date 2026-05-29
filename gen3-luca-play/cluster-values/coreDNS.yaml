@@ -1,0 +1,33 @@
+service:
+  clusterIP: "172.20.0.10"
+  name: "kube-dns"
+
+autoscaler:
+  enabled: true
+  replicas: 2
+
+k8sAppLabelOverride: "kube-dns"
+
+deployment:
+  name: "coredns-argo"
+
+image:
+  repository: 602401143452.dkr.ecr.us-east-2.amazonaws.com/eks/coredns
+  tag: v1.11.3-eksbuild.2
+
+affinity:
+  podAntiAffinity:
+    preferredDuringSchedulingIgnoredDuringExecution:
+    - weight: 100
+      podAffinityTerm:
+        labelSelector:
+          matchExpressions:
+          - key: k8s-app
+            operator: In
+            values:
+            - kube-dns
+        topologyKey: kubernetes.io/hostname
+
+prometheus:
+  service:
+    enabled: true

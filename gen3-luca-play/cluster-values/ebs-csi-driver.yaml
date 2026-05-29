@@ -1,0 +1,17 @@
+node:
+  resources:
+    requests:
+      cpu: 10m
+      memory: 40Mi
+    limits:
+      cpu: 100m
+      memory: 256Mi   # down from 768Mi
+
+controller:
+  resources:
+    requests:
+      cpu: 10m
+      memory: 40Mi
+    limits:
+      cpu: 250m
+      memory: 256Mi   # down from 1280Mi
