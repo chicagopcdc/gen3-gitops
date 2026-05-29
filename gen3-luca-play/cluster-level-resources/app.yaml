@@ -17,7 +17,7 @@ spec:
     repoURL: 'https://github.com/chicagopcdc/gen3-helm'
   - ref: values
     repoURL: 'https://github.com/chicagopcdc/gen3-gitops'
-    targetRevision: main
+    targetRevision: master
   syncPolicy:
     automated:
       selfHeal: true
