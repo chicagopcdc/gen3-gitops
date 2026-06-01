@@ -15,9 +15,10 @@ spec:
       - $values/gen3-luca-play/cluster-level-resources/cluster-values.yaml
     path: helm/cluster-level-resources
     repoURL: 'https://github.com/chicagopcdc/gen3-helm'
+    targetRevision: karpeneter-update # can remove later since karpenter is set to false in cluster-values.yaml
   - ref: values
     repoURL: 'https://github.com/chicagopcdc/gen3-gitops'
-    targetRevision: master
+    targetRevision: main
   syncPolicy:
     automated:
       selfHeal: true
