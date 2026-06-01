@@ -213,3 +213,9 @@ wts:
   externalSecrets:
     dbcreds: "gen3-luca-play-default-wts-creds"
     createK8sWtsSecret: true
+
+gearbox:
+  enabled: false
+
+gearbox-middleware:
+  enabled: false
