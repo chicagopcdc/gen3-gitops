@@ -22,27 +22,13 @@ global:
   dictionaryUrl: "https://pcdc-staging-dictionaries.s3.amazonaws.com/pcdc-schema-staging-20250114.json"
   portalApp: pcdc
   publicDataSets: false
-  tierAccessLevel: "granular"
-  tierAccessLimit: "5"
+  tierAccessLevel: "private"
+  tierAccessLimit: "100"
   netPolicy:
     enabled: false
   dispatcherJobNum: "10"
   frontendRoot: "portal"
   ddEnabled: false
-  #       arboristURL: "http://arborist-service/"
-# -  manifestServiceURL: "http://manifestservice-service/"
-# -  fenceURL: "http://fence-service/"
-# -
-# -amanuensis:
-# -  enabled: true
-# -  externalSecrets:
-# -    createK8sJwtKeysSecret: true
-# -    amanuensisConfig: "gen3-luca-play-default-amanuensis-config"
-# -    dbcreds: "gen3-luca-play-default-amanuensis-creds"
-# -  image:
-# -    repository: "public.ecr.aws/m5g8z3e9/pcdc/amanuensis"
-# -    tag: "update-config"
-# -    pullPolicy: Always
 
 ambassador:
   enabled: false
@@ -51,10 +37,6 @@ arborist:
   enabled: true
   externalSecrets:
     dbcreds: "gen3-luca-play-default-arborist-creds"
-#     -  image:
-# -    repository: quay.io/pcdc/arborist
-# -    tag: "2026.03"
-
 
 argo-wrapper:
   enabled: false
@@ -70,14 +52,10 @@ audit:
 
 
 aws-es-proxy:
-  enabled: true
+  enabled: false
   esEndpoint: "vpc-gen3-luca-play-gen3-metadata-hfduu2vqkjnftxjarhyx4uon5a.us-east-1.es.amazonaws.com"
   externalSecrets:
     awsCreds: "gen3-luca-play-default-aws-es-proxy-creds"
-#   -  image:
-# -    repository: "quay.io/cdis/aws-es-proxy"
-# -    tag: "v1.3.1"
-# -    pullPolicy: "IfNotPresent"
 
 dicom-server:
   enabled: false
@@ -91,9 +69,7 @@ dicom-viewer:
 
 
 fence:
-# -  amanuensis:
-# -    enabled: true
-  enabled: true
+  enabled: false
   serviceAccount:
     annotations:
       eks.amazonaws.com/role-arn: "arn:aws:iam::677809101101:role/gen3_service/gen3-luca-play-default-fence-sa"
@@ -127,7 +103,7 @@ guppy:
   enabled: false
 
 hatchery:
-  enabled: true
+  enabled: false
 
   hatchery:
     sidecarContainer:
@@ -181,7 +157,7 @@ hatchery:
 
 
 indexd:
-  enabled: true
+  enabled: false
   defaultPrefix: "dg.XXXX/"
   externalSecrets:
     dbcreds: "gen3-luca-play-default-indexd-creds"
@@ -189,7 +165,7 @@ indexd:
 
 
 manifestservice:
-  enabled: true
+  enabled: false
   serviceAccount:
     annotations:
       eks.amazonaws.com/role-arn: "arn:aws:iam::677809101101:role/gen3_service/gen3-luca-play-default-manifestservice-sa"
@@ -197,13 +173,13 @@ manifestservice:
     createK8sManifestServiceSecret: true
 
 metadata:
-  enabled: true
+  enabled: false
   externalSecrets:
     dbcreds: "gen3-luca-play-default-metadata-creds"
     createK8sMetadataSecret: true
 
 peregrine:
-  enabled: true
+  enabled: false
   externalSecrets:
     dbcreds: "gen3-luca-play-default-sheepdog-creds"
 
@@ -211,7 +187,7 @@ pidgin:
   enabled: false
 
 portal:
-  enabled: true
+  enabled: false
 
 requestor:
   enabled: false
@@ -219,10 +195,10 @@ requestor:
     dbcreds: "gen3-luca-play-default-requestor-creds"
 
 revproxy:
-  enabled: true
+  enabled: false
 
 sheepdog:
-  enabled: true
+  enabled: false
   externalSecrets:
     dbcreds: "gen3-luca-play-default-sheepdog-creds"
 
@@ -233,7 +209,7 @@ sower:
   enabled: false
 
 wts:
-  enabled: true
+  enabled: false
   externalSecrets:
     dbcreds: "gen3-luca-play-default-wts-creds"
     createK8sWtsSecret: true
