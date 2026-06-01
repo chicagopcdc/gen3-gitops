@@ -14,7 +14,7 @@ spec:
         valueFiles:
           - $values/gen3-luca-play/portal-luca.pedscommons.org/values.yaml
     - repoURL: 'https://github.com/chicagopcdc/gen3-gitops'
-      targetRevision: main
+      targetRevision: master
       ref: values
   destination:
     server: "https://kubernetes.default.svc"

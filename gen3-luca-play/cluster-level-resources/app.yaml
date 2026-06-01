@@ -18,7 +18,7 @@ spec:
     targetRevision: karpeneter-update # can remove later since karpenter is set to false in cluster-values.yaml
   - ref: values
     repoURL: 'https://github.com/chicagopcdc/gen3-gitops'
-    targetRevision: main
+    targetRevision: master
   syncPolicy:
     automated:
       selfHeal: true
