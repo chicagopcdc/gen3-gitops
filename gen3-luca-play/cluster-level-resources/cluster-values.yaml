@@ -2,6 +2,10 @@ cluster: "gen3-luca-play"
 
 accountNumber: "677809101101"
 
+# configuration:
+#   configurationRepo: https://github.com/chicagopcdc/gen3-gitops
+#   configurationRevision: master
+
 alb-controller:
   enabled: true
   configuration:
