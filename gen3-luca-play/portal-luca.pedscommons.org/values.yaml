@@ -109,7 +109,7 @@ fence:
     dbcreds: "gen3-luca-play-default-fence-creds"
 
   usersync:
-    usersync: true
+    usersync: false
     schedule: "*/30 * * * *"
     syncFromDbgap: false
     userYamlS3Path: "s3://gen3-luca-play-users/dev/user.yaml"
