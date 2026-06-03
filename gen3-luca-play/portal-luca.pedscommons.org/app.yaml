@@ -22,6 +22,14 @@ spec:
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
-    - Replace=true
+    - PrunePropagationPolicy=foreground
+    - PruneLast=true
+    - ServerSideApply=true
     automated:
       selfHeal: true
+      prune: true
+  ignoreDifferences:
+    - group: external-secrets.io
+      kind: ExternalSecret
+      jsonPointers:
+        - /status

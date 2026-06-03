@@ -118,10 +118,6 @@ fence:
 
   FENCE_CONFIG_PUBLIC:
     AMANUENSIS_PUBLIC_KEY_PATH: "/amanuensis/jwt_public_key.pem"
-    LOGIN_OPTIONS: 
-      - name: 'Login from Google'
-        desc: ''
-        idp: google
 
   image:
     repository: "quay.io/pcdc/fence"
