@@ -1217,7 +1217,7 @@ sower:
   enabled: false
 
 wts:
-  enabled: true
+  enabled: false
   externalSecrets:
     dbcreds: "gen3-luca-play-default-wts-creds"
     createK8sWtsSecret: true

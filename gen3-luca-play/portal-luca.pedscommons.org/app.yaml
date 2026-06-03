@@ -21,10 +21,9 @@ spec:
     namespace: default
   syncPolicy:
     syncOptions:
-    - CreateNamespace=true
-    - PrunePropagationPolicy=foreground
-    - PruneLast=true
-    - ServerSideApply=true
+      - CreateNamespace=true
+      - PrunePropagationPolicy=foreground
+      - PruneLast=true
     automated:
       selfHeal: true
       prune: true
